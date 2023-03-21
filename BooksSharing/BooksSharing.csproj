@@ -4,6 +4,12 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>7706dd0b-1bf4-4a13-a32d-ce99c85e5976</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BooksSharing.Application\BooksSharing.Application.csproj" />
+    <ProjectReference Include="..\BooksSharing.DataAccess\BooksSharing.DataAccess.csproj" />
+  </ItemGroup>
 
 </Project>
