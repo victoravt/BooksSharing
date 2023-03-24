@@ -15,9 +15,6 @@ Comments: Genere and Tag entity fields was suggested by Copilot.
             Also the Copilot recognize interface that class should implement and suggests apropriate methods.
             It also genereated almost all DbSets in AppDbContext class.
 
-            Conculsion: Majority of time is spent to define right relationships between entities and there deletion behaviour. For this purpose copilot of course will not help you. But for mechanical DbSet properties writting, services injections in Program.cs it is helping. But after all you should be carefull what the Copilot genereated, recheck it. So it's also time consuming. Maybe you win in the time of mechanical coding, but loose time to check at to be sure that there is no minor mistakes from Copilot.
-
-
 ### Subtask 3: Implement authentication for application
 Time spent on this subtask: [insert time here]
 Comments: 
@@ -51,4 +48,8 @@ Time spent on this subtask: [insert time here]
 Comments: 
 
 Common comments on Hackathon:
+I've done first too tasks by Friday.
+Conculsion: Majority of time is spent to define right relationships between entities and there deletion behaviour. For this purpose copilot of course will not help you. But for mechanical DbSet properties writting, services injections in Program.cs it is helping. But after all you should be carefull what the Copilot genereated, recheck it. So it's also time consuming. Maybe you win in the time of mechanical coding, but loose time to check at to be sure that there is no minor mistakes from Copilot.
+
+PS.
 The copilot don't take into account that it suggests class property which obviously is datetime (ex DueDate, or somthingDate)
