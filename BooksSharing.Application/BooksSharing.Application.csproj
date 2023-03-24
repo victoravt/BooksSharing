@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -7,13 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Respositories\**" />
+    <EmbeddedResource Remove="Respositories\**" />
+    <None Remove="Respositories\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BooksSharing.Domain\BooksSharing.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Dtos\" />
-    <Folder Include="Respositories\" />
     <Folder Include="Services\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
   </ItemGroup>
 
 </Project>
