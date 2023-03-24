@@ -1,4 +1,9 @@
+using BooksSharing.Application.Repositories;
+using BooksSharing.Application.Repositories.Common;
 using BooksSharing.DataAccess.Context;
+using BooksSharing.DataAccess.Repositories;
+using BooksSharing.DataAccess.Repositories.Common;
+using BooksSharing.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,8 +11,20 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
+string connectionString = builder.Configuration["Db:ConnectionString:Dev"];
+
+//Inject repositories
+builder.Services.AddScoped<IBookRepository, BookRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ITagRepository, TagRepository>();
+builder.Services.AddScoped<IGenereRepository, GenereRepository>();
+builder.Services.AddScoped<ILoanHistoryRepository, LoanHistoryRepository>();
+builder.Services.AddScoped<IReservationQueueRepository, ReservationQueueRepository>();
+
+
 // Connection string
-builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer("Data Source=.;Initial Catalog=BooksSharing;Integrated Security=True;"));
+builder.Services.AddDbContext<AppDbContext>(options => 
+            options.UseSqlServer(connectionString));
 
 var app = builder.Build();
 
@@ -19,6 +36,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+//db ensure created
 
 
 
